@@ -54,6 +54,11 @@ footer {
     font-size: 13px;
     min-height: 35px;
 }
+
+.small-font {
+    font-size: 12px;
+}
+
 footer a {
     color:rgb(105, 105, 105);
 }

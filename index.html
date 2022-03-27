@@ -30,23 +30,23 @@
     </div>
     <div class="my-4 border rounded-3 p-3 p-md-4 mx-auto form-container shadow-sm bg-white">
         <h4>Compute for the largest palindrome product of two numbers.</h4>
+        <button onclick="computeThreeDigits()" class="btn btn-warning px-4 mx-auto d-block mt-4 fw-bold">
+            Largest for two 3-digit numbers
+        </button>
         <form id="form">
-            <button onclick="computeThreeDigits()" class="btn btn-warning px-4 mx-auto d-block mt-4 fw-bold">
-                Two 3-digit numbers
-            </button>
             <div class="d-sm-flex my-3 justify-content-between align-items-center">
                 <div class="form-group w-100 me-3 mb-2 mb-sm-0">
                     <label class="mb-1" for="first-number">First Number</label>
-                    <input type="number" pattern="[0-9]*" class="form-control" id="first-number" name="first-number" required min="0" max="999">
+                    <input type="number" pattern="[0-9]*" class="form-control bg-light" id="first-number" name="first-number" required min="1" max="999">
                 </div>
                 <div class="form-group w-100">
                     <label class="mb-1" for="second-number">Second Number</label>
-                    <input type="number" pattern="[0-9]*" class="form-control" id="second-number" name="second-number" required min="0" max="999">
+                    <input type="number" pattern="[0-9]*" class="form-control bg-light" id="second-number" name="second-number" required min="1" max="999">
                 </div>
             </div>
             <div class="d-flex justify-content-between align-items-center">
                 <button type="submit" class="btn btn-dark">Submit</button>
-                <button onclick="clearForm()" type="reset" class="btn btn-secondary">Clear</button>
+                <button onclick="clearForm()" type="reset" class="btn btn-secondary">Clear <span class="small-font d-none d-sm-inline">(Esc)</span></button>
             </div>
         </form>
     </div>

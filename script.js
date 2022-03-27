@@ -5,8 +5,7 @@ const result = document.getElementById("result");
 const resultsContainer = document.getElementById("results-container");
 const bottomMessage = document.getElementById("bottom-message");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+const compute = () => {
     const first = firstNum.value;
     const second = secondNum.value;
     const largest = getLargestPalindromeProduct(first, second);
@@ -18,12 +17,26 @@ form.addEventListener("submit", (e) => {
     } else {
         bottomMessage.style.display = "none";
     }
+    firstNum.blur();
+    secondNum.blur();
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    compute();
 });
 
 const clearForm = () => {
     hide();
     firstNum.value = "";
     secondNum.value = "";
+    firstNum.focus();
+}
+
+document.onkeydown = (e) => {
+    if (e.key === "Escape" && (firstNum.value || secondNum.value)) {
+        clearForm();
+    }
 }
 
 const show = () => {
@@ -39,4 +52,5 @@ const hide = () => {
 const computeThreeDigits = () => {
     firstNum.value = "999";
     secondNum.value = "999";
+    compute();
 }
